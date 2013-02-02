@@ -1,3 +1,14 @@
 language: node_js
 node_js:
   - 0.8
+before_install:
+  - brew install node
+  - "export PATH=/usr/local/share/npm/bin:$PATH"
+  - npm install -g mocha
+  - npm install -g grunt
+script:
+  - "sudo grunt authorize <<< 'y'"
+  - grunt downloadApp
+  - grunt buildApp:UICatalog:iphonesimulator6.0
+  - grunt buildApp:TestApp:iphonesimulator6.0
+  - grunt unit functional
