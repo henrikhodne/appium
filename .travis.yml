@@ -1,4 +1,4 @@
-language: node_js
+language: objective_c
 node_js:
   - 0.8
 before_install:
@@ -6,6 +6,7 @@ before_install:
   - "export PATH=/usr/local/share/npm/bin:$PATH"
   - npm install -g mocha
   - npm install -g grunt
+install: npm install
 script:
   - "sudo grunt authorize <<< 'y'"
   - grunt downloadApp
