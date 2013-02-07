@@ -1,9 +1,5 @@
 language: objective_c
-node_js:
-  - 0.8
 before_install:
-  - brew install node
-  - "export PATH=/usr/local/share/npm/bin:$PATH"
   - npm install -g mocha
   - npm install -g grunt
 install: npm install
