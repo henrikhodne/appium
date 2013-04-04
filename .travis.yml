@@ -1,3 +1,10 @@
-language: node_js
-node_js:
-  - 0.8
+language: objective-c
+git:
+  submodules: off
+before_install:
+  - npm install -g mocha
+  - npm install -g grunt-cli
+install: npm install
+before_script: ./reset.sh
+script: grunt test
+after_failure: cat appium.log
