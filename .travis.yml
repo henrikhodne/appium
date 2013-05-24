@@ -1,8 +1,9 @@
-language: objective-c
-before_install: 'export PATH="`brew --prefix`/share/npm/bin:$PATH"'
-install:
-  - npm install -g mocha
-  - npm install -g grunt-cli
-  - ./reset.sh --dev --ios
-script: grunt ios
-after_failure: cat appium.log
+language: node_js
+
+script: mocha -t 60000 sample-code/examples/node/sauce-connect.js
+
+addons:
+  sauce_connect:
+    username: "henrikhodne"
+    access_key:
+      secure: "lfZbq0WYSSBUS73Rjfd2WBi2sTMpXWmiQ6eWMs45j1Qjak+sAT7/v0xEdOn3\na4EDlb4QjNptqg1odm5x7goED5/LHghCRex6bD2Cf4aH/1LqLPrm2yxdsBA7\nWtNeNCgG5kSZwpwtD8cQ8fx3cyzHkYyMTHz66CUeaIa2FWwE2mQ="
