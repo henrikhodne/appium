@@ -1,4 +1,5 @@
 language: objective-c
+before_install: 'export PATH="`brew --prefix`/share/npm/bin:$PATH"'
 install:
   - npm install -g mocha
   - npm install -g grunt-cli
