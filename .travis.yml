@@ -1,3 +1,15 @@
 language: node_js
 node_js:
   - 0.8
+addons:
+  sauce_connect:
+    username: "henrikhodne"
+    access_key:
+      secure: "qePz9Yvx+aswPN/0GmHiynzAvfKuP/26lq4sFbKmtvjUWbwZ8yHiPxsrzfbyYJcmo5079kX3MhZRZOs+LUAGQ6d1/Y6pBvz5oOJV1ldxnI9ZM/VTsRwhw1CJAbpNbb89KDboO+UwGTjVf6BgDR8NO0p4AMLJfE8WwTimVwpb7bk="
+install:
+  - npm install -g appium
+  - npm install wd
+before_script:
+  - appium &
+  - sleep 5
+script: node sample-code/examples/node/sauce-connect.js
